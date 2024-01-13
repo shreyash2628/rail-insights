@@ -1,6 +1,6 @@
 import React from 'react'
-import PnrStatus from './PnrStatus';
-import SeatsAvaiability from './SeatsAvailability';
+import PnrStatus from './Pnr/PnrStatus';
+import SeatsAvaiability from './SeatsAvailability'; 
 import SearchTrains from './SearchTrains';
 import TrainLiveStatus from './TrainLiveStatus';
 
