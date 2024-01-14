@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const PnrInfoTable = ({ data }) => {
   return (
@@ -14,13 +14,13 @@ const PnrInfoTable = ({ data }) => {
       </thead>
       <tbody>
         {
-          data.passengerInfo.map((info, i) => (
+          data?.passengerInfo?.map((info, i) => (
             <tr>
               <td className="border border-slate-700 text-center">{i + 1}</td>
               <td className="border border-slate-700 text-center">Passenger {i + 1}</td>
-              <td className="border border-slate-700 text-center">{info.currentCoach}</td>
-              <td className="border border-slate-700 text-center">{info.currentBerthNo}</td>
-              <td className="border border-slate-700 text-center">CNF/{info.currentCoach}/{info.currentBerthNo}</td>
+              <td className="border border-slate-700 text-center">{info?.currentCoach}</td>
+              <td className="border border-slate-700 text-center">{info?.currentBerthNo}</td>
+              <td className="border border-slate-700 text-center">CNF/{info?.currentCoach}/{info?.currentBerthNo}</td>
             </tr>
 
           ))
