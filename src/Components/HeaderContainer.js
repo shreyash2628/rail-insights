@@ -7,58 +7,34 @@ import pnrIcon from '../Assests/pnr.png';
 const HeaderContainer = (props) => {
 
     const [activeTab, setActiveTab] = useState('searchTrain');
-    useEffect(()=>{
+    useEffect(() => {
         props.function(activeTab);
-    },[activeTab,props]);
+    }, [activeTab, props]);
 
     return (
-        <div className='border w-4/8  mx-48 h-36 bg-slate-200 rounded-2xl flex justify-center flex-row'>
+        <div className='border h-14 w-full  bg-black  flex justify-end flex-row'>
 
-            {/* Search Train Component */}
-            <div className='w-48 h-26 my-6 mx-4 flex items-center justify-center flex-col' onClick={() => {
+            <button className='text-white pr-8 h-14' onClick={() => {
                 setActiveTab('searchTrain');
-            }}>
-                <img alt='searchTrain' src={searchtrain}></img>
-                <p>Search Train</p>
-                {
-                    activeTab === 'searchTrain' ? <div className='h-2 w-48 bg-black'></div> : <></>
+            }}>Search Train</button>
+             {
+                    activeTab === 'searchTrain' ? <div className='h-2  bg-white'></div> : <></>
                 }
-            </div>
 
-            {/* PNR Component */}
-            <div className='w-48 h-26 my-6 mx-4 flex items-center justify-center flex-col' onClick={() => {
+            <button className='text-white pr-8' onClick={() => {
                 setActiveTab('pnrStatus');
-            }}>
-                <img alt='pnrStatus' src={pnrIcon}></img>
-                <p>PNR Status</p>
-                {
-                    activeTab === 'pnrStatus' ? <div className='h-2 w-48 bg-black'></div> : <></>
+            }}>Pnr Status</button>
 
-                }
-            </div>
-
-            {/* Seats Availability Component */}
-            <div className='w-48 h-26 my-6 mx-4 flex items-center justify-center flex-col' onClick={() => {
+            <button className='text-white pr-8' onClick={() => {
                 setActiveTab('seatsAvailability');
+            }}>Seats Availability</button>
 
-            }}>
-                <img alt='seatsAvailable' src={seats}></img>
-                <p>Seats Availability</p>
-                {
-                    activeTab === 'seatsAvailability' ? <div className='h-2 w-48 bg-black'></div> : <></>
-
-                }
-            </div>
-
-            {/* Live Location Component */}
-            <div className='w-48 h-26 my-6 mx-4 flex items-center justify-center flex-col' onClick={() => {
+            <button className='text-white pr-12' onClick={() => {
                 setActiveTab('liveLocation');
+            }}> Live Location</button>
 
-            }}>
-                <img src={live_location} alt='live-location'></img>
-                <p>Train Live Status</p>
-                {activeTab === 'liveLocation' ? <div className='h-2 w-48 bg-black'></div> : <></>}
-            </div>
+
+
         </div>
     )
 }

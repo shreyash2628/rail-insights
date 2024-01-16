@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import FromToIcon from '../Assests/transfer.png';
-import DatePickerMUI from '../Components/DatePickerMUI';
+import FromToIcon from '../../Assests/transfer.png';
+import DatePickerMUI from './DatePickerMUI.js';
 import ScrollableDiv from './ScrollableDiv.js';
 
 const SearchTrains = () => {
@@ -8,6 +8,7 @@ const SearchTrains = () => {
   const [fromStation, setFromStation] = useState('');
   const [toStation, setToStation] = useState('');
   const [selectedDate, setSelectedDate] = React.useState(null);
+  const[searchResult,setSearchResult]=useState('');
 
   const handleDateChange = (newValue) => {
     setSelectedDate(newValue);
@@ -46,8 +47,9 @@ const SearchTrains = () => {
     console.log('From Station:', fromStation);
     console.log('To Station:', toStation);
     const date = formatDate(selectedDate);
+    setSearchResult("anything")
 
-    console.log('Date:', date);
+    // console.log('Date:', date);
   };
   return (
     <div>
@@ -81,12 +83,18 @@ const SearchTrains = () => {
         </button>
       </div>
 
-       <div className='w-screen h-screen bg-slate-200 flex flex-row'>
+
+      {
+        searchResult===''?<></>:
+      
+
+       <div className='w-screen h-screen  flex flex-row'>
+        
         <div className='border border-4 bg-white rounded-xl w-1/5 h-screen'> 
               {/* //FILTER SECTION */}
         </div>
 
-        <div className='border border-4 bg-slate-200 rounded-xl w-4/5 h-screen'> 
+        <div className='  rounded-xl w-4/5 h-screen'> 
         <ScrollableDiv/>
         </div>
 
@@ -94,6 +102,7 @@ const SearchTrains = () => {
 
       </div> 
 
+      }
     </div>
   )
 }

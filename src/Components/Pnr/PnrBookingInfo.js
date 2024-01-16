@@ -4,7 +4,7 @@ import RightIcon from '../../Assests/right.png';
 const PnrBookingInfo = ({data}) => {
   return (
     <>
-      <h1 className='text-2xl font-bold underline underline-offset-4'>{data?.trainInfo?.name} - {data?.trainInfo?.trainNo}</h1>
+      <h1 className='text-2xl font-bold underline underline-offset-4 mb-4'>{data?.trainInfo?.name} - {data?.trainInfo?.trainNo}</h1>
       <div className=' w-3/5 bg-slate-200 h-56 justify-center flex flex-row'>
 
         <div className='w-2/5  flex flex-col p-8 items-center justify-center'>

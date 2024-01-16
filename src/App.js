@@ -10,8 +10,8 @@ function App() {
     setSelectedComp(data);
   }
   return (
-    <div className="flex flex-col bg-black h-screen  w-screen ">
-     <p className='underline flex justify-center text-white text-4xl mb-8'>Train-iNsights</p>
+    <div className="flex flex-col  h-screen  w-screen ">
+     {/* <p className='underline flex justify-center text-white text-4xl mb-8'>Train-iNsights</p> */}
      <HeaderContainer function={getData} />
      <BodyContainer activeTab={selectedComp}/>
     </div>
